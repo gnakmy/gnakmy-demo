@@ -15,11 +15,11 @@ export async function getStaticProps() {
 
 const Home = ({ data }) => {
 
-    const { query } = useRouter()
+    const router  = useRouter()
 
     const handleClick = () => {
         console.log('Placing your order')
-        query.replace('/profile')
+        router.replace('/profile')
     }
 
     if(!data) return <div>Loading...</div>
