@@ -26,7 +26,7 @@ const ProductDetail = () => {
         <div className={styles.main}>
         <h1 className={styles.container}>Product {productId}: {data.name}</h1>
         <table className={styles.container}>
-            <tr className={styles.container} font-size >Name: {data.name}</tr>
+            <tr className={styles.container}>Name: {data.name}</tr>
             <tr className={styles.container}>Height: {data.height}</tr>
             <tr className={styles.container}>Mass: {data.mass}</tr>
             <tr className={styles.container}>Hair color: {data.hair_color}</tr>
