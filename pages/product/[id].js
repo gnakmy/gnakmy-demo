@@ -8,7 +8,7 @@ export async function getStaticProps( context ) {
     const data = await res.json();
     return {
         props:{
-            people: data
+            person: data
         }
     };
 }
@@ -18,7 +18,7 @@ export async function getStaticPaths() {
     const res = await fetch('https://swapi.dev/api/people');
     const data = await res.json();
 
-    const paths = data.results.map((people, i) => ({
+    const paths = data.results.map((person, i) => ({
         params: {
             id: i.toString(),
         },
@@ -30,13 +30,13 @@ export async function getStaticPaths() {
     };
 }
 
-export default function ProductId ({ people }) {
+function ProductId ({ person }) {
 
     return (
         <div className={styles.container}>
         
         <Head>
-            <><title>Character - {people.name}</title><link rel="icon" href="/favicon.ico" /></>
+            <><title>Character - {person?.name}</title><link rel="icon" href="/favicon.ico" /></>
         </Head>
         <h1 className={styles.container}>
         <Link href='/'>
@@ -44,16 +44,16 @@ export default function ProductId ({ people }) {
         </Link>
         </h1>
             <div className={styles.main}>
-            <div><h1 className={styles.container}>Product : {people.name}</h1>
+            <div><h1 className={styles.container}>Product : {person?.name}</h1>
             <table className={styles.container}>
-                <tr className={styles.container}>Name: {people.name}</tr>
-                <tr className={styles.container}>Height: {people.height}</tr>
-                <tr className={styles.container}>Mass: {people.mass}</tr>
-                <tr className={styles.container}>Hair color: {people.hair_color}</tr>
-                <tr className={styles.container}>Skin color: {people.skin_color}</tr>
-                <tr className={styles.container}>Eye color: {people.eye_color}</tr>
-                <tr className={styles.container}>Birth year: {people.birth_year}</tr>
-                <tr className={styles.container}>Gender: {people.gender}</tr>
+                <tr className={styles.container}>Name: {person?.name}</tr>
+                <tr className={styles.container}>Height: {person?.height}</tr>
+                <tr className={styles.container}>Mass: {person?.mass}</tr>
+                <tr className={styles.container}>Hair color: {person?.hair_color}</tr>
+                <tr className={styles.container}>Skin color: {person?.skin_color}</tr>
+                <tr className={styles.container}>Eye color: {person?.eye_color}</tr>
+                <tr className={styles.container}>Birth year: {person?.birth_year}</tr>
+                <tr className={styles.container}>Gender: {person?.gender}</tr>
             </table>
             </div>
             </div>
@@ -61,3 +61,5 @@ export default function ProductId ({ people }) {
         </div>
     )
 }
+
+export default ProductId;
