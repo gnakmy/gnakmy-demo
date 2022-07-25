@@ -108,24 +108,43 @@
   margin-left: 0.5rem;
 }
 
-.home {
-  padding: 0 2rem;
-  transition: color 0.15s ease, border-color 0.15s ease;
-}
-
-.home:hover,
-.home:focus,
-.home:active {
-  color: #0070f3;
-  border-color: #0070f3;
-}
-
 .profilebutton{
   margin: 1.5rem;
   padding: 1.5rem;
   position:absolute;
   top:0;
   right:0;
+}
+
+.profile {
+  display: flex;
+  margin-top: 2em;
+}
+
+.back a {
+  color: blue;
+  text-decoration: underline;
+}
+
+.list {
+  min-height: 100vh;
+  padding: 0 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.gridList {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 800px;
+  margin-top: 3rem;
+  list-style: none;
+  margin-left: 0;
+  padding-left: 0;
 }
 
 
